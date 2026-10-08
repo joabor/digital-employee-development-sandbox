@@ -6,4 +6,5 @@ def calculate_reference_value(base_amount: float, adjustment_percent: float) -> 
 
     The public contract for edge cases is documented in README.md.
     """
-    return round(base_amount * (1 + adjustment_percent / 100), 2)
+    adjusted_value = base_amount * (1 + adjustment_percent / 100)
+    return round(max(0.0, adjusted_value), 2)
