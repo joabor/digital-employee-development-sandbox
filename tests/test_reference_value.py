@@ -7,3 +7,7 @@ def test_positive_adjustment() -> None:
 
 def test_full_reduction_reaches_zero() -> None:
     assert calculate_reference_value(100.0, -100.0) == 0.0
+
+
+def test_adjustment_below_full_reduction_is_clamped_to_zero() -> None:
+    assert calculate_reference_value(100.0, -150.0) == 0.0
